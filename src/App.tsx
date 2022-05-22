@@ -3,7 +3,7 @@ import { DateTime } from 'luxon'
 import { useDB } from './useDB'
 
 export function App() {
-	const db = useDB('local')
+	const db = useDB('github')
 
 	let currentLocation = 'Loading..'
 	let prevLocations = [{ location: 'Loading..' }]
