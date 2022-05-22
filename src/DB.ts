@@ -11,12 +11,11 @@ export const getDB = async (source: 'local' | 'github'): Promise<DB> => {
 	return data
 }
 
-type ISODateString = string
-// { "start": "2022-05-20T20:40:00+0200", "location": "Athens" },
+type ISO8601DateString = string
 
 type Location = {
-	start: ISODateString
-	end?: ISODateString
+	start: ISO8601DateString
+	end?: ISO8601DateString
 	location: string
 }
 

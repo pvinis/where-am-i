@@ -1,13 +1,13 @@
 {
 	"locations": [
-		{ "start": "2022-05-20T20:40:00+0200", "location": "Athens" },
 		{
-			"date": "2020-10-22",
-			"location": "Berlin"
+			"start": "2022-05-20T20:40:00+0200",
+			"location": "Athens"
 		},
 		{
-			"date": "2020-10-20",
-			"location": "Athens"
+			"start": "2022-05-10T20:40:00+0200",
+			"end": "2022-05-20T15:00:00+0000",
+			"location": "London"
 		}
 	]
 }

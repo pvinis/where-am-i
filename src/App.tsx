@@ -1,12 +1,24 @@
+import { drop } from 'remeda'
+import { DateTime } from 'luxon'
 import { useDB } from './useDB'
 
 export function App() {
 	const db = useDB('local')
-	const locations = db?.locations
 
-	const currentLocation = locations?.[0]?.location ?? 'Loading..'
+	let currentLocation = 'Loading..'
+	let prevLocations = [{ location: 'Loading..' }]
+	if (db !== undefined) {
+		const locations = db.locations
 
-	const prevLocations = locations ?? [{ location: 'Loading..' }]
+		prevLocations = locations
+		if (
+			locations[0].end === undefined ||
+			DateTime.now() < DateTime.fromISO(locations[0].end)
+		) {
+			currentLocation = locations[0].location
+			prevLocations = drop(prevLocations, 1)
+		}
+	}
 
 	return (
 		<div className="flex flex-col items-center p-10">
